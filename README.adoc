@@ -1,0 +1,34 @@
+= fritzbox-log.scraper
+
+== TL;DR
+Use selenium to scrape fritzbox logs. 
+
+== What
+Restarting my fritzbox means loosing all my logs. Using the TR-64 approach gives you some logs. 
+
+== Result
+With logs now in your filesystem you can ask questions
+
+1. How often did devices optimize throughput:
+´´´
+$ jq '.[] | select(.msg | contains("WLAN-Bandwechsel"))|.msg' 2024-06-13_05_36_46-fritz-logs.json |wc -l
+38
+´´´
+== Multiplatform Selenium images
+Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
+
+== Info
+* https://www.zenrows.com/blog/selenium-python-web-scraping[Web Scraping with Selenium and Python in 2024]
+* https://hub.docker.com/r/selenium/standalone-chrome
+* https://medium.com/no-sliver-bullet/apple-m1-讓你的-docker-build-不起來了嗎-bbe133d6d1bb
+* https://github.com/seleniumhq/docker-selenium/#quick-start
+* https://www.selenium.dev/documentation/webdriver/drivers/remote_webdriver/#downloads
+* https://github.com/browserless/browserless
+* https://www.browserstack.com/guide/run-selenium-tests-using-firefox-driver
+* https://gist.github.com/dzitkowskik/0fc641cf59af0dc3de62[A simple tutorial of using selenium grid in python unittests]
+* https://www.atlantbh.com/selenium-grid-4-with-docker/[Selenium Grid 4 with Docker]
+* https://hackmd.io/@jenc/SJYmGcKsK[pytest - fixture; Setup and Teardown]
+* https://github.com/SeleniumHQ/selenium/issues/12031[[🚀 Feature]: Grid endpoint to kill all sessions of all nodes connected to a hub]
+* https://regex101.com[regex101.com]
+* https://medium.com/@prachi1808saini/installing-firefox-inside-a-docker-container-b331fdb2c1e4[“Installing Firefox inside a Docker Container”]
+* https://hub.docker.com/r/msjpq/firefox-vnc

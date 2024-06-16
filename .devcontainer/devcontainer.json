@@ -1,0 +1,42 @@
+{
+  "name": "selenium-grid",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.maxTokenizationLineLength": 200000,
+        "git.rebaseWhenSync": true,
+        "remote.restoreForwardedPorts": false,
+        "remote.autoForwardPorts": false,
+        "typescript.preferences.quoteStyle": "single"
+      },
+      "extensions": [
+        "adpyke.codesnap",
+        "donjayamanne.python-extension-pack",
+        "dzhavat.git-cheatsheet",
+        "ms-azuretools.vscode-docker",
+        "PKief.material-icon-theme",
+        "streetsidesoftware.code-spell-checker",
+        "wesbos.theme-cobalt2",
+        "ms-python.python",
+        "frhtylcn.pythonsnippets",
+        "AykutSarac.jsoncrack-vscode",
+        "charliermarsh.ruff",
+        "Monish.regexsnippets",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  },
+  "service": "selenium-grid",
+  "workspaceFolder": "/src",
+  "remoteUser": "vscode",
+  //"postStartCommand": "python -m pip install -r requirements.txt ", // && pytest-watch test . -c './pytest-watcher-config.yaml' ",
+  // https://playwright.dev/python/docs/intro#installing-playwright-pytest
+  "postStartCommand": "python -m pip install -r requirements.txt", //&& playwright install ", // && ptw test_scraper.py ",
+  "shutdownAction": "stopCompose"
+}
