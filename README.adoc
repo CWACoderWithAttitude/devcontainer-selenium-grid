@@ -18,6 +18,7 @@ $ jq '.[] | select(.msg | contains("WLAN-Bandwechsel"))|.msg' 2024-06-13_05_36_4
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
 == Info
+* https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/[How To Handle Errors And Exceptions In Selenium Python]
 * https://www.zenrows.com/blog/selenium-python-web-scraping[Web Scraping with Selenium and Python in 2024]
 * https://hub.docker.com/r/selenium/standalone-chrome
 * https://medium.com/no-sliver-bullet/apple-m1-讓你的-docker-build-不起來了嗎-bbe133d6d1bb

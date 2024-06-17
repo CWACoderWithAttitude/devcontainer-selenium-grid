@@ -1,7 +1,8 @@
+#version: "3.7"
+
 services:
   selenium-grid:
-    container_name: ${PREFIX}selenium-grid
-    hostname: selenium-grid.local
+    container_name: selenium-grid
     build:
       context: .
     working_dir: /src
@@ -9,48 +10,46 @@ services:
       - ..:/src:cached
     env_file:
       - .env
-    environment:
-      - SELENIUM_HUB_URL = "http://${PREFIX}selenium-hub:"${SELENIUM_HUB_PORT}"
     command: >
       bash -c "sleep infinity"
   # grid code taken from 
   #   https://www.atlantbh.com/selenium-grid-4-with-docker/
   firefox:
     image: selenium/node-firefox:126.0
-    container_name: ${PREFIX}firefox
+    container_name: firefox
     shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - SE_EVENT_BUS_HOST=${PREFIX}selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=${SE_EVENT_BUS_PUBLISH_PORT}
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=${SE_EVENT_BUS_SUBSCRIBE_PORT}
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_INSTANCES=1
       - SE_NODE_MAX_SESSIONS=5
       - SE_VNC_PASSWORD=itzelbritzel
   chromium:
     image: selenium/node-chromium:125.0
-    container_name: ${PREFIX}chromium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
-      - SE_EVENT_BUS_HOST=${PREFIX}selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=${SE_EVENT_BUS_PUBLISH_PORT}
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=${SE_EVENT_BUS_SUBSCRIBE_PORT}
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_INSTANCES=1
       - SE_NODE_MAX_SESSIONS=5
       - SE_VNC_PASSWORD=itzelbritzel
     ports:
-      - "${CHROMIUM_PORT}:7900"
+      - "7902:7900"
   selenium-hub:
     image: selenium/hub:4.21.0
-    container_name: ${PREFIX}selenium-hub
+    container_name: selenium-hub
+    hostname: selenium-hub.local
     ports:
-      - "${SE_EVENT_BUS_PUBLISH_PORT}:4442"
-      - "${SE_EVENT_BUS_SUBSCRIBE_PORT}:4443"
-      - "${SELENIUM_HUB_PORT}:4444"
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
 
 #networks:
-#  selenium-grid-net:
+#  fritzbox-log-scraper-net:
