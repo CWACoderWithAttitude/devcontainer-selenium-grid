@@ -1,8 +1,10 @@
 """Tools & helpers to assist using selenium"""
 
-import io, json
-from selenium import webdriver
+import io
+import json
 from datetime import datetime
+
+from selenium import webdriver
 
 
 def build_ff_options():
@@ -19,7 +21,7 @@ def get_remote_ff(sel_url: str):
     return driver
 
 
-def get_remote_chrome():
+def get_remote_chrome(selenium_url: str):
     chrome_options = webdriver.ChromeOptions()
     # chrome_options.setCapability("browserVersion", "100")
     # chrome_options.setCapability("platformName", "Windows")
@@ -29,7 +31,7 @@ def get_remote_chrome():
     # // session info or via GraphQL
     # chrome_options.setCapability("se:sampleMetadata", "Sample metadata value")
     # driver = new RemoteWebDriver(new URL("http://gridUrl:4444"), chromeOptions);
-    driver = webdriver.Remote(command_executor=sel_url, options=chrome_options)
+    driver = webdriver.Remote(command_executor=selenium_url, options=chrome_options)
     return driver
 
 

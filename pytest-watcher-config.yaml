@@ -5,4 +5,4 @@ ignore: []
 onFail: ''
 onPass: ''
 passthrough: []
-verbose: false
+verbose: true

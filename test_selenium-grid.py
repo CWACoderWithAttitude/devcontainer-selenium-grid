@@ -51,7 +51,7 @@ def test_make_screenshot_from_page_firefox():
 def test_make_screenshot_from_page_chrome():
     try:
         driver = get_remote_chrome(selenium_url=SELENIUM_HUB_URL)
-        driver.get(url="https://www.heise.de")
+        driver.get(url=what_is_my_browser)
         shot_ok = driver.get_screenshot_as_file(f"./{TEST_TIME}-wimb_chrome.png")
         assert shot_ok is True
     except WebDriverException:
