@@ -51,7 +51,15 @@ def write_json_to_file(data: dict, file: str) -> None:
         f.write(json.dumps(data, ensure_ascii=False))
 
 
-def string_between_dots(text):
+def string_between_dots(text) -> str:
+    """String between two dots
+
+    Args:
+        text (_type_): String to extract substring from.
+
+    Returns:
+        str: If string contains two dots the string between them - empty string otherwise.
+    """
     pattern = r"\.(.*?)\."
     matches = re.findall(pattern, text)
     if len(matches) > 0:
