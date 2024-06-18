@@ -2,6 +2,7 @@
 
 import io
 import json
+import re
 from datetime import datetime
 
 from selenium import webdriver
@@ -48,3 +49,12 @@ def write_json_to_file(data: dict, file: str) -> None:
     https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file"""
     with io.open(file, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, ensure_ascii=False))
+
+
+def string_between_dots(text):
+    pattern = r"\.(.*?)\."
+    matches = re.findall(pattern, text)
+    if len(matches) > 0:
+        return matches[0]
+    else:
+        return ""
