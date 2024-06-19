@@ -40,6 +40,7 @@ services:
       - SE_NODE_MAX_INSTANCES=1
       - SE_NODE_MAX_SESSIONS=5
       - SE_VNC_PASSWORD=itzelbritzel
+      - SE_OPTS=--enable-managed-downloads true
     ports:
       - "7902:7900"
   selenium-hub:

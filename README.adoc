@@ -9,7 +9,8 @@ Base selenium grid devcontainer to enable you to start developing selenium grid 
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
 == Info used during implementation
-
+* https://github.com/SeleniumHQ/docker-selenium/issues/1813[ [🚀 Feature]: Support file downloads on the nodes #1813 ]
+* https://github.com/SeleniumHQ/selenium/issues/12034[ [🐛 Bug]: Get download file in client #12034 ]
 * http://xcal1.vodafone.co.uk[Download Test Files provided by Vodafone]
 * https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/[How To Handle Errors And Exceptions In Selenium Python]
 * https://www.zenrows.com/blog/selenium-python-web-scraping[Web Scraping with Selenium and Python in 2024]
