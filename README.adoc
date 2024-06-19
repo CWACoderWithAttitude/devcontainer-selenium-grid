@@ -1,23 +1,16 @@
-= fritzbox-log.scraper
+= Selenium Grid DevContainer
+
+Based on bleeding edge https://github.com/SeleniumHQ/docker-selenium[selenium 4.21.0]
 
 == TL;DR
-Use selenium to scrape fritzbox logs. 
+Base selenium grid devcontainer to enable you to start developing selenium grid based (test) applications
 
-== What
-Restarting my fritzbox means loosing all my logs. Using the TR-64 approach gives you some logs. 
-
-== Result
-With logs now in your filesystem you can ask questions
-
-1. How often did devices optimize throughput:
-´´´
-$ jq '.[] | select(.msg | contains("WLAN-Bandwechsel"))|.msg' 2024-06-13_05_36_46-fritz-logs.json |wc -l
-38
-´´´
 == Multiplatform Selenium images
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
-== Info
+== Info used during implementation
+
+* http://xcal1.vodafone.co.uk[Download Test Files provided by Vodafone]
 * https://www.lambdatest.com/blog/handling-errors-and-exceptions-in-selenium-python/[How To Handle Errors And Exceptions In Selenium Python]
 * https://www.zenrows.com/blog/selenium-python-web-scraping[Web Scraping with Selenium and Python in 2024]
 * https://hub.docker.com/r/selenium/standalone-chrome
