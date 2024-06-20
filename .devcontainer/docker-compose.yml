@@ -31,6 +31,7 @@ services:
     image: selenium/node-chromium:125.0
     volumes:
       - /dev/shm:/dev/shm
+      - ./downloads:/home/seluser/Downloads
     depends_on:
       - selenium-hub
     environment:

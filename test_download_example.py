@@ -29,7 +29,9 @@ def test_download_csv():
     downloadcsv.click()
     time.sleep(5)
     files = driver.get_downloadable_files()
-    print(f"files: {files}")
+    for file in files:
+        print(f"file: {file}")
+        driver.download_file(file, "./downloads")
     driver.close()
 
 

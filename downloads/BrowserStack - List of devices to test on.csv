@@ -1,0 +1,77 @@
+Source: https://browserstack.com/test-on-the-right-mobile-devices,,,
+,,,
+List of devices for start-ups,,,
+Use this list when you have upto 15000 unique visitors a month,,,
+Device name,Device Type,OS,OS version
+iPhone 13,Mobile,iOS,15
+iPhone 12 Pro Max,Mobile,iOS,14
+Samsung Galaxy S21,Mobile,Android,11
+Samsung Galaxy A51,Mobile,Android,10
+Samsung Galaxy A10,Mobile,Android,9
+Xiaomi Redmi Note 8,Mobile,Android,9
+iPad 8th,Tablet,iOS,14
+,,,
+,,,
+List of devices for growing businesses,,,
+Use this list when you have between 15000 and 300000 unique visitors a month,,,
+Device name,Device Type,OS,OS version
+iPhone 13,Mobile,iOS,15
+iPhone 12 Pro Max,Mobile,iOS,14
+Samsung Galaxy S21,Mobile,Android,11
+Samsung Galaxy A51,Mobile,Android,10
+Samsung Galaxy A10,Mobile,Android,9
+Xiaomi Redmi Note 8,Mobile,Android,9
+iPad 8th,Tablet,iOS,14
+Samsung Galaxy A21s,Mobile,Android,10
+iPhone 11,Mobile,iOS,14
+iPhone XR,Mobile,iOS,15
+Samsung Galaxy Tab A7,Mobile,Android,10
+Google Pixel 6,Mobile,Android,12
+,,,
+,,,
+List of devices for enterprises,,,
+Use this list when you have more than 300000 unique visitors every month,,,
+Device name,Device Type,OS,OS version
+iPhone 13,Mobile,iOS,15
+iPhone 12 Pro Max,Mobile,iOS,14
+Samsung Galaxy S21,Mobile,Android,11
+Samsung Galaxy A51,Mobile,Android,10
+Samsung Galaxy A10,Mobile,Android,9
+Xiaomi Redmi Note 8,Mobile,Android,9
+iPad 8th,Tablet,iOS,14
+Samsung Galaxy A21s,Mobile,Android,10
+iPhone 11,Mobile,iOS,14
+iPhone XR,Mobile,iOS,15
+Samsung Galaxy Tab A7,Tablet,Android,10
+Google Pixel 6,Mobile,Android,12
+iPhone 8 Plus,Mobile,iOS,14
+iPhone SE 2022,Mobile,iOS,15
+Samsung Galaxy A12,Mobile,Android,10
+Xiaomi Redmi Note 9,Mobile,Android,10
+Samsung Galaxy A32,Mobile,Android,11
+iPad 7th,Tablet,iOS,14
+,,,
+,,,
+Additional devices specific to Geography for start-ups,,,
+Country,Device 1,Device 2,
+India,Redmi 9,Redmi 9A,
+China,Vivo Y17,Oppo A5,
+Japan,Sony Xperia 10 II,Sony Xperia 10 II,
+Brazil,Samsung Galaxy A10s,Samsung Galaxy A01,
+Mexico,Huawei Honor 9X,Motorola Moto G20,
+South Africa,Huawei P30 Lite,Huawei P40 Lite,
+Nigeria,Infinix Smart 5,Infinix Hot 10 Play,
+Russia,Samsung Galaxy A50,Xiaomi Redmi 9C,
+,,,
+Additional devices specific to Geography for growing businesses and enterprises,,,
+Country,Device 1,Device 2,Device 3
+India,Redmi 9,Redmi 9A,Xiaomi Redmi Note 7 Pro
+China,Vivo Y17,Oppo A5,Huawei P30 Pro
+Japan,Sony Xperia 10 II,Sony Xperia 10 III,Samsung Galaxy S10
+Brazil,Samsung Galaxy A10s,Samsung Galaxy A01,Motorola Moto G20
+Mexico,Huawei Honor 9X,Motorola Moto G20,Motorola Moto E6 Play
+South Africa,Huawei P30 Lite,Huawei P40 Lite,Samsung Galaxy A2 Core
+Nigeria,Infinix SMART 5,Infinix HOT 10 Play,Tecno SPARK 4
+Russia,Samsung Galaxy A50,Xiaomi Redmi 9C,Xiaomi Redmi Note 8 Pro
+,,,
+Source: https://browserstack.com/test-on-the-right-mobile-devices,,,
