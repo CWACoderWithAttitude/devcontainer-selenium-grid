@@ -28,6 +28,8 @@ def get_remote_chrome_download(selenium_url: str):
     # chrome_options.setcapability("se:downloadsEnabled", True)
     # chrome_options.set_capability("se:downloadsEnabled", True)
     chrome_options.enable_downloads = True
+    chrome_options.add_argument("--headless=new")
+
     # desiredCapabilities = webdriver.DesiredCapabilities.CHROME.copy()
     # desiredCapabilities["version"] = "125.0"
     # https://github.com/SeleniumHQ/seleniumhq.github.io/blob/trunk/examples/python/tests/drivers/test_remote_webdriver.py#L43C5-L43C36

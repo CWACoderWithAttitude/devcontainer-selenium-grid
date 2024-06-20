@@ -9,6 +9,8 @@ Base selenium grid devcontainer to enable you to start developing selenium grid 
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
 == Info used during implementation
+* https://stackoverflow.com/questions/76909117/is-there-any-way-to-control-downloaded-files-using-selenium[Is there any way to control downloaded files using Selenium?]
+* https://stackoverflow.com/questions/45631715/downloading-with-chrome-headless-and-selenium/73840130#73840130[Downloading with chrome headless and selenium]
 * https://github.com/SeleniumHQ/docker-selenium/issues/1813[ [🚀 Feature]: Support file downloads on the nodes #1813 ]
 * https://github.com/SeleniumHQ/selenium/issues/12034[ [🐛 Bug]: Get download file in client #12034 ]
 * http://xcal1.vodafone.co.uk[Download Test Files provided by Vodafone]

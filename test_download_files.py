@@ -1,5 +1,5 @@
 import pytest
-from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import WebDriverException, NoSuchElementException, TimeoutException
 
 from selenium_tools.selenium_grid import get_remote_chrome, get_remote_chrome_download, get_remote_ff
 from selenium_tools.tools import get_timestamp, string_between_dots
@@ -30,9 +30,17 @@ def test_download_file():
         all_href[0].click()
         all_href[1].click()
         WebDriverWait(driver, 3).until(lambda d: "5MB.jpg" in d.get_downloadable_files())
-
-    except WebDriverException:
-        print(f"WebDriver Error occured: {WebDriverException}")
+        driver.get("chrome://downloads")
+        links = driver.find_elements(By.TAG_NAME, "A")
+        assert links is not None
+        assert len(links) > 42
+        print(f"Download Links: {links}")
+    except NoSuchElementException as nsex:
+        print(f"NoSuchElementException occured: {nsex}")
+    except TimeoutException as tex:
+        print(f"TimeoutException occured: {tex}")
+    except WebDriverException as wdex:
+        print(f"WebDriver Error occured: {str(wdex)}, args: {wdex.args}")
     finally:
         if driver is not None:
             driver.quit()
