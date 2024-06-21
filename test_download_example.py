@@ -14,15 +14,8 @@ SELENIUM_HUB_URL = "http://selenium-hub.local:4444/wd/hub"
 
 
 def test_download_csv():
-    # options = webdriver.ChromeOptions()
-    # prefs = {"download.default_directory": "./downloads/"}
-    ## example: prefs = {"download.default_directory" : "C:\Tutorial\down"};
-    # options.add_experimental_option("prefs", prefs)
-    # driver = webdriver.Chrome(executable_path="./chromedriver", chrome_options=options)
     driver = get_remote_chrome_download(selenium_url=SELENIUM_HUB_URL)
-    # try:
     driver.get("https://www.browserstack.com/test-on-the-right-mobile-devices")
-    print(f"title: {driver.title}")
     gotit = driver.find_element(By.ID, "accept-cookie-notification")
     gotit.click()
     downloadcsv = driver.find_element(By.CSS_SELECTOR, ".icon-csv")
@@ -35,5 +28,19 @@ def test_download_csv():
     driver.close()
 
 
-#    except:
-#        print("Invalid URL")
+def test_download_pdf():
+    driver = get_remote_chrome_download(selenium_url=SELENIUM_HUB_URL)
+    driver.get(
+        "https://www.nlbk.niedersachsen.de/download/164891/Test-pdf_3.pdf.pdf&ved=2ahUKEwirkcyF9euGAxWrhP0HHbIsCPMQFnoECAYQAQ&usg=AOvVaw3cbUuEsNudpk695i_2Ho-R"
+    )
+    # gotit = driver.find_element(By.ID, "accept-cookie-notification")
+    # gotit.click()
+    # downloadcsv = driver.find_element(By.CSS_SELECTOR, ".icon-csv")
+    # downloadcsv.click()
+    time.sleep(15)
+    files = driver.get_downloadable_files()
+    print(f"files: {files}")
+    for file in files:
+        print(f"file: {file}")
+        driver.download_file(file, "./downloads")
+    driver.close()

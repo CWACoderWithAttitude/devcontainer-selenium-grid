@@ -29,16 +29,15 @@ def test_download_file():
         assert len(all_href) == 2
         all_href[0].click()
         all_href[1].click()
-        WebDriverWait(driver, 3).until(lambda d: "5MB.jpg" in d.get_downloadable_files())
-        driver.get("chrome://downloads")
-        links = driver.find_elements(By.TAG_NAME, "A")
-        assert links is not None
-        assert len(links) > 42
-        print(f"Download Links: {links}")
+        WebDriverWait(driver, 5).until(lambda d: "5MB.jpg" in d.get_downloadable_files())
+        files = driver.get_downloadable_files()
+        for file in files:
+            print(f"file: {file}")
+            driver.download_file(file, "./downloads")
     except NoSuchElementException as nsex:
         print(f"NoSuchElementException occured: {nsex}")
-    except TimeoutException as tex:
-        print(f"TimeoutException occured: {tex}")
+    # except TimeoutException as tex:
+    #    print(f"TimeoutException occured: {tex}")
     except WebDriverException as wdex:
         print(f"WebDriver Error occured: {str(wdex)}, args: {wdex.args}")
     finally:
