@@ -66,3 +66,8 @@ def string_between_dots(text) -> str:
         return matches[0]
     else:
         return ""
+
+
+def sabitize_string(input: str) -> str:
+    output = input.replace(" ", "_").replace(".", "_")
+    return output

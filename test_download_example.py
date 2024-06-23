@@ -13,7 +13,7 @@ import time
 SELENIUM_HUB_URL = "http://selenium-hub.local:4444/wd/hub"
 
 
-def test_download_csv():
+def test_download_csv_chromium():
     driver = get_remote_chrome_download(selenium_url=SELENIUM_HUB_URL)
     driver.get("https://www.browserstack.com/test-on-the-right-mobile-devices")
     gotit = driver.find_element(By.ID, "accept-cookie-notification")
@@ -22,6 +22,37 @@ def test_download_csv():
     downloadcsv.click()
     time.sleep(5)
     files = driver.get_downloadable_files()
+    for file in files:
+        print(f"file: {file}")
+        driver.download_file(file, "./downloads")
+    driver.close()
+
+
+def test_download_csv_firefox():
+    driver = get_remote_ff(selenium_url=SELENIUM_HUB_URL)
+    driver.get("https://www.browserstack.com/test-on-the-right-mobile-devices")
+    gotit = driver.find_element(By.ID, "accept-cookie-notification")
+    gotit.click()
+    downloadcsv = driver.find_element(By.CSS_SELECTOR, ".icon-csv")
+    downloadcsv.click()
+    time.sleep(5)
+    files = driver.get_downloadable_files()
+    for file in files:
+        print(f"file: {file}")
+        driver.download_file(file, "./downloads")
+    driver.close()
+
+
+def test_download_pdf_firefox():
+    driver = get_remote_ff(selenium_url=SELENIUM_HUB_URL)
+    driver.get("https://www.corelegal.de/de-wAssets/docs/test.pdf")
+    # gotit = driver.find_element(By.ID, "accept-cookie-notification")
+    # gotit.click()
+    # downloadcsv = driver.find_element(By.CSS_SELECTOR, ".icon-csv")
+    # downloadcsv.click()
+    time.sleep(15)
+    files = driver.get_downloadable_files()
+    print(f"files: {files}")
     for file in files:
         print(f"file: {file}")
         driver.download_file(file, "./downloads")

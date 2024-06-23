@@ -4,6 +4,7 @@ from selenium import webdriver
 def build_ff_options():
     ff_options = webdriver.FirefoxOptions()
     ff_options.add_argument("-headless")
+    ff_options.enable_downloads = True
     return ff_options
 
 

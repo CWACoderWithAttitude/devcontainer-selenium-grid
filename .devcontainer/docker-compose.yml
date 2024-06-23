@@ -8,8 +8,8 @@ services:
     working_dir: /src
     volumes:
       - ..:/src:cached
-    env_file:
-      - .env
+    #env_file:
+    #  - .env
     command: >
       bash -c "sleep infinity"
   # grid code taken from 
@@ -27,11 +27,11 @@ services:
       - SE_NODE_MAX_INSTANCES=1
       - SE_NODE_MAX_SESSIONS=5
       - SE_VNC_PASSWORD=itzelbritzel
+      - SE_OPTS=--enable-managed-downloads true
   chromium:
     image: selenium/node-chromium:125.0
     volumes:
       - /dev/shm:/dev/shm
-      - ./downloads:/home/seluser/Downloads
     depends_on:
       - selenium-hub
     environment:
@@ -42,7 +42,6 @@ services:
       - SE_NODE_MAX_SESSIONS=5
       - SE_VNC_PASSWORD=itzelbritzel
       - SE_OPTS=--enable-managed-downloads true
-      #- SE_OPTS=--downloads-path '/home/seluser/Downloads'
     ports:
       - "7902:7900"
   selenium-hub:
