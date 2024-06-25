@@ -1,15 +1,34 @@
 = Selenium Grid DevContainer
 
-Based on bleeding edge https://github.com/SeleniumHQ/docker-selenium[selenium 4.21.0]
-
 == TL;DR
-Base selenium grid devcontainer to enable you to start developing selenium grid based (test) applications
+Selenium grid all-in-one turnkey solution to enable local browser tests.
+
+== Requirements
+Just two assumptions to run the code:
+1. Local docker setup.
+Podman should be fine to - i have not tested it, though
+2. Access to docker hub
+
+== What this is not
+This is no tutorial on using selenium. A Lot of smart people have created great tuturials - browse the list of links or ask a search engine.
+
+== What's in it
+I want to make it as easy as possible for you to get used to selenium grid. So i wrapped things up in a https://code.visualstudio.com/docs/devcontainers/containers[VS Code Devcontainer]-setup.
+That way you need need to worry about ports and version numbers.
+For a kickstart some source code examples show basic usage.
+
+i think the use of https://www.selenium.dev[selenium] is a must if you do development and testing of user facing software. 
+https://www.selenium.dev/documentation/grid/[Selenium grid] makes it possible and easy to perform cross platform and cross browser tests.
+The `grid` in the name suggests selenium grid is build upon different components each talking to one another. And this is where it starts to get complicated.
+
+
+
 
 == Multiplatform Selenium images
+I develop and use this setup on Apple silicon but it should run on any decent x64 or apple silicon device.
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
 == Info used during implementation
-* []
 * https://himanshu-sheth.medium.com/selenium-grid-setup-tutorial-for-cross-browser-testing-1616251162ac[Selenium Grid Setup Tutorial For Cross Browser Testing]
 * https://stackoverflow.com/questions/78021121/i-cant-download-files-using-selenium-in-python[I can't download files using selenium in Python]
 * https://medium.com/@youvegotnigel/testing-file-downloads-with-selenium-grid-4-in-a-docker-environment-d490cc8ee289[Testing file downloads with Selenium Grid 4 in a Docker environment]

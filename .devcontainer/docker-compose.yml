@@ -44,6 +44,22 @@ services:
       - SE_OPTS=--enable-managed-downloads true
     ports:
       - "7902:7900"
+  chromium_126_0:
+    image: selenium/node-chromium:126.0
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_INSTANCES=1
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_VNC_PASSWORD=itzelbritzel
+      - SE_OPTS=--enable-managed-downloads true
+    ports:
+      - "7903:7900"
   selenium-hub:
     image: selenium/hub:4.21.0
     container_name: selenium-hub

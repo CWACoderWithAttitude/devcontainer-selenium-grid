@@ -17,7 +17,7 @@ def build_ff_options():
 def get_remote_ff(sel_url: str):
     driver = webdriver.Remote(
         command_executor=sel_url,
-        options=build_ff_options(),  # {'browserName': 'firefox', 'javascriptEnabled': True}
+        options=build_ff_options(),
     )
     return driver
 
@@ -40,6 +40,14 @@ def get_timestamp():
     now = datetime.now()  # current date and time
     # date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
     date_time = now.strftime("%Y-%m-%d_%H_%M_%S")
+    print("date and time:", date_time)
+    return date_time
+
+
+def get_date():
+    now = datetime.now()  # current date and time
+    # date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+    date_time = now.strftime("%Y-%m-%d")
     print("date and time:", date_time)
     return date_time
 
