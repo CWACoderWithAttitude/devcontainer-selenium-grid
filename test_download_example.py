@@ -52,7 +52,9 @@ def test_download_csv_firefox():
 
 def test_download_firefox_pdf():
     driver = get_remote_ff(selenium_url=SELENIUM_HUB_URL)
-    driver.get("https://www.corelegal.de/de-wAssets/docs/test.pdf")
+    driver.get(
+        "https://www.nlbk.niedersachsen.de/download/164891/Test-pdf_3.pdf.pdf&ved=2ahUKEwirkcyF9euGAxWrhP0HHbIsCPMQFnoECAYQAQ&usg=AOvVaw3cbUuEsNudpk695i_2Ho-R"
+    )
     time.sleep(15)
     files = driver.get_downloadable_files()
     print(f"files: {files}")

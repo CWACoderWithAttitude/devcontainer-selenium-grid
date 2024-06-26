@@ -4,12 +4,16 @@ from selenium_tools.selenium_grid import get_remote_chrome, get_remote_chrome_do
 from selenium_tools.tools import get_timestamp, string_between_dots
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+import os
 
 SELENIUM_HUB_URL = "http://selenium-hub.local:4444/wd/hub"
 what_is_my_browser = "https://www.whatsmybrowser.org/"
 heise = "https://www.heise.de"
 heise_expected_title = "heise online - IT-News, Nachrichten und Hintergründe | heise online"
 TEST_TIME = get_timestamp()
+
+DOWNLOADS_CHROMIUM = f"./downloads/{TEST_TIME}/chromium"
+os.makedirs(DOWNLOADS_CHROMIUM, exist_ok=True)
 
 
 def test_get_heise_with_firefox():
@@ -73,8 +77,12 @@ def test_download_file():
         assert len(all_href) == 2
         all_href[0].click()
         all_href[1].click()
-        WebDriverWait(driver, 3).until(lambda d: "5MB.jpg" in d.get_downloadable_files())
-
+        WebDriverWait(driver, timeout=120, poll_frequency=5).until(lambda d: "5MB.jpg" in d.get_downloadable_files())
+        files = driver.get_downloadable_files()
+        print(f"files: {files}")
+        for file in files:
+            print(f"file: {file}")
+            driver.download_file(file, DOWNLOADS_CHROMIUM + "/pdf")
     except WebDriverException:
         print(f"WebDriver Error occured: {WebDriverException}")
     finally:
