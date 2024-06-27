@@ -51,6 +51,7 @@ def test_download_csv_firefox():
 
 
 def test_download_firefox_pdf():
+    """Not OK"""
     driver = get_remote_ff(selenium_url=SELENIUM_HUB_URL)
     driver.get(
         "https://www.nlbk.niedersachsen.de/download/164891/Test-pdf_3.pdf.pdf&ved=2ahUKEwirkcyF9euGAxWrhP0HHbIsCPMQFnoECAYQAQ&usg=AOvVaw3cbUuEsNudpk695i_2Ho-R"
@@ -65,10 +66,24 @@ def test_download_firefox_pdf():
 
 
 def test_download_chromium_pdf():
+    """OK"""
     driver = get_remote_chrome(selenium_url=SELENIUM_HUB_URL)
     driver.get(
         "https://www.nlbk.niedersachsen.de/download/164891/Test-pdf_3.pdf.pdf&ved=2ahUKEwirkcyF9euGAxWrhP0HHbIsCPMQFnoECAYQAQ&usg=AOvVaw3cbUuEsNudpk695i_2Ho-R"
     )
+    time.sleep(15)
+    files = driver.get_downloadable_files()
+    print(f"files: {files}")
+    for file in files:
+        print(f"file: {file}")
+        driver.download_file(file, DOWNLOADS_CHROMIUM + "/pdf")
+    driver.close()
+
+
+def test_download2_chromium_pdf():
+    """Not OK"""
+    driver = get_remote_chrome(selenium_url=SELENIUM_HUB_URL)
+    driver.get("https://www.corelegal.de/de-wAssets/docs/test.pdf")
     time.sleep(15)
     files = driver.get_downloadable_files()
     print(f"files: {files}")

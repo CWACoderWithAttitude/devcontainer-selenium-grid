@@ -30,7 +30,8 @@
         "Monish.regexsnippets",
         "ms-vscode-remote.remote-containers",
         "anweber.vscode-httpyac",
-        "asciidoctor.asciidoctor-vscode"
+        "asciidoctor.asciidoctor-vscode",
+        "tomoki1207.pdf"
       ]
     }
   },
