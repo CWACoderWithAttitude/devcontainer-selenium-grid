@@ -29,6 +29,7 @@ I develop and use this setup on Apple silicon but it should run on any decent x6
 Selenium components for platforms like Raspberry Pi, Apple Silicon (M Series) are described https://www.selenium.dev/blog/2024/multi-arch-images-via-docker-selenium[here]
 
 == Info used during implementation
+* https://github.com/SeleniumHQ/docker-selenium/blob/trunk/README.md#video-recording-screen-resolution-and-time-zones-in-a-dynamic-grid[Video recording, screen resolution, and time zones in a Dynamic Grid]
 * https://himanshu-sheth.medium.com/selenium-grid-setup-tutorial-for-cross-browser-testing-1616251162ac[Selenium Grid Setup Tutorial For Cross Browser Testing]
 * https://stackoverflow.com/questions/78021121/i-cant-download-files-using-selenium-in-python[I can't download files using selenium in Python]
 * https://medium.com/@youvegotnigel/testing-file-downloads-with-selenium-grid-4-in-a-docker-environment-d490cc8ee289[Testing file downloads with Selenium Grid 4 in a Docker environment]
