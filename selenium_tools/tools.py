@@ -76,6 +76,6 @@ def string_between_dots(text) -> str:
         return ""
 
 
-def sabitize_string(input: str) -> str:
+def sanitize_string(input: str) -> str:
     output = input.replace(" ", "_").replace(".", "_")
     return output
